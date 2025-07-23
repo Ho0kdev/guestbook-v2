@@ -37,7 +37,7 @@ export function Navigation() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Sparkles className="w-6 h-6 text-primary" />
-              <span className="font-bold text-xl text-foreground">Zenbook</span>
+              <span className="font-bold text-xl text-foreground">GuestBook</span>
             </div>
             <div className="w-8 h-8 bg-muted animate-pulse rounded-full"></div>
           </div>
@@ -52,18 +52,18 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Sparkles className="w-6 h-6 text-primary" />
-            <span className="font-bold text-xl text-foreground">Zenbook</span>
+            <span className="font-bold text-xl text-foreground">GuestBook</span>
           </div>
 
           <div className="absolute left-1/2 transform -translate-x-1/2">
             <a
-              href="https://dreamsofcode.io"
+              href="https://martinpetron.com"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium hover:bg-primary/20 transition-colors"
             >
               <Sparkles className="w-4 h-4" />
-              <span>by Dreams of Code</span>
+              <span>by Hook</span>
             </a>
           </div>
 
