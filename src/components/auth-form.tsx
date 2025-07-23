@@ -72,7 +72,7 @@ export function AuthForm({ onSuccess }: AuthFormProps) {
         setIsLoading(false);
         // Hide captcha and reset for next attempt
         setShowCaptcha(false);
-        setCaptchaToken('token');
+        setCaptchaToken(null);
         turnstileRef.current?.reset();
         return;
       }
@@ -96,7 +96,7 @@ export function AuthForm({ onSuccess }: AuthFormProps) {
         setIsLoading(false);
         // Hide captcha and reset for next attempt
         setShowCaptcha(false);
-        setCaptchaToken('token');
+        setCaptchaToken(null);
         turnstileRef.current?.reset();
         return;
       }
@@ -117,7 +117,7 @@ export function AuthForm({ onSuccess }: AuthFormProps) {
         setIsLoading(false);
         // Hide captcha and reset for next attempt
         setShowCaptcha(false);
-        setCaptchaToken('token');
+        setCaptchaToken(null);
         turnstileRef.current?.reset();
         return;
       }
@@ -127,7 +127,7 @@ export function AuthForm({ onSuccess }: AuthFormProps) {
     setIsLoading(false);
     // Hide captcha after successful submission
     setShowCaptcha(false);
-    setCaptchaToken('token');
+    setCaptchaToken(null);
     turnstileRef.current?.reset();
   };
 
@@ -141,7 +141,7 @@ export function AuthForm({ onSuccess }: AuthFormProps) {
               setError('');
               setUsernameError('');
               setShowCaptcha(false);
-              setCaptchaToken('token');
+              setCaptchaToken(null);
             }}
             className={`flex-1 py-2 px-4 text-sm font-medium rounded-md transition-all ${
               isLogin
@@ -157,7 +157,7 @@ export function AuthForm({ onSuccess }: AuthFormProps) {
               setError('');
               setUsernameError('');
               setShowCaptcha(false);
-              setCaptchaToken('token');
+              setCaptchaToken(null);
             }}
             className={`flex-1 py-2 px-4 text-sm font-medium rounded-md transition-all ${
               !isLogin
@@ -249,7 +249,7 @@ export function AuthForm({ onSuccess }: AuthFormProps) {
               ref={turnstileRef}
               siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
               onSuccess={(token) => {
-                setCaptchaToken('token');
+                setCaptchaToken(token);
                 setError(''); // Clear any previous errors when captcha is verified
                 // Auto-submit the form once captcha is verified
                 setTimeout(() => {
@@ -260,10 +260,10 @@ export function AuthForm({ onSuccess }: AuthFormProps) {
                 }, 100);
               }}
               onExpire={() => {
-                setCaptchaToken('token');
+                setCaptchaToken(null);
               }}
               onError={() => {
-                setCaptchaToken('token');
+                setCaptchaToken(null);
               }}
               options={{
                 theme: 'dark',
