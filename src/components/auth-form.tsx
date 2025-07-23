@@ -242,7 +242,7 @@ export function AuthForm({ onSuccess }: AuthFormProps) {
             </div>
           </>
 
-        {showCaptcha && (
+        {/* {showCaptcha && (
           <div className="flex flex-col items-center gap-2 my-4">
             <Turnstile
               key={`turnstile-${isLogin ? 'login' : 'signup'}`}
@@ -275,7 +275,7 @@ export function AuthForm({ onSuccess }: AuthFormProps) {
               <p className="text-xs text-green-500">✓ Captcha verified</p>
             )}
           </div>
-        )}
+        )} */}
 
         <div className="pt-2">
           <Button
